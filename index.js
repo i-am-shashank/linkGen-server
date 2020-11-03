@@ -38,13 +38,13 @@ app.post("/", multerValidate.single("image"), async (req, res) => {
       },
     });
   } catch {
-    res.json({ sucess: 0 }).status(400);
+    res.status(400).json({ sucess: 0 })
     console.log("error while uploading");
   }
-  console.log(req);
-  res.send("hello");
+  // console.log(req);
+  console.log("hello");
 });
 
-app.listen(4444, () => {
-  console.log("connected at port: 4444");
+app.listen(9001, () => {
+  console.log("connected at port: 5001");
 });
