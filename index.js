@@ -8,9 +8,9 @@ app.use(express.json());
 app.use(cors());
 
 cloudinary.config({
-  cloud_name: 'dwmwpmrpo',
-  api_key: '116391666589298',
-  api_secret: 'oFm_hBGdeiOXIXWt8ZchlCfdr0c',
+  cloud_name: "dwmwpmrpo",
+  api_key: "116391666589298",
+  api_secret: "oFm_hBGdeiOXIXWt8ZchlCfdr0c",
 });
 
 const multerValidate = multer({
@@ -38,12 +38,11 @@ app.post("/", multerValidate.single("image"), async (req, res) => {
       },
     });
   } catch {
-    res.json({ sucess: 0 });
+    res.json({ sucess: 0 }).status(400);
     console.log("error while uploading");
-    res.status(400);
   }
-console.log(req);
-res.send('hello')
+  console.log(req);
+  res.send("hello");
 });
 
 app.listen(4444, () => {
